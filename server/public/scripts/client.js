@@ -7,9 +7,9 @@ app.config(['$routeProvider', function($routeProvider) {
       controller: 'HomeController',
       controllerAs: 'home'
     })
-    .when('/potato' ,{
-      templateUrl: '/views/templates/potato.html',
-      controller: 'PotatoController',
+    .when('/kilgore' ,{
+      templateUrl: '/views/templates/kilgore.html',
+      controller: 'KilgoreController',
       controllerAs: 'potato'
     })
     .when('/birdperson' ,{
@@ -17,7 +17,12 @@ app.config(['$routeProvider', function($routeProvider) {
       controller: 'BirdController',
       controllerAs: 'birdperson'
     })
-    .otherwise({  
+    .when('/phil' ,{
+      templateUrl: '/views/templates/phil.html',
+      controller: 'PhilController',
+      controllerAs: 'phil'
+    })
+    .otherwise({
       redirectTo: 'home'
     });
 
@@ -30,9 +35,20 @@ app.controller('HomeController', function() {
 
 });
 
-app.controller('PotatoController', function() {
-  console.log('potato controller running');
+app.controller('KilgoreController', function() {
+  console.log('kilgore controller running');
   var self = this;
-  self.message = "Potato controller is the best!";
+  self.message = "Kilgore controller is the best!";
+
+});
+
+app.controller('PhilController', function() {
+  console.log('phil controller running');
+  var self = this;
+
+});
+app.controller('BirdController', function() {
+  console.log('bird controller running');
+  var self = this;
 
 });
